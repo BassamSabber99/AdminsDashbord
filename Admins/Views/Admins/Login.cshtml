@@ -1,0 +1,61 @@
+﻿@using Microsoft.Ajax.Utilities
+@model Admins.Models.LoginAdminsViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <section class="row justify-content-between ">
+        <section class="col-12 col-sm-12 col-md-8 text">
+            <div class="jumbotron ">
+                <h1 class="display-5 mb-4">Admins...Your Way To The Cloud...</h1>
+                <p class="lead text-right">
+                    أسسها المهندس / محمد عكاشة ، منذ عام 2014. والذي يوظف فريقًا ماهرًا يركز تمامًا على تقديم حلول برمجية عالية الجودة تمكن عملائنا من تحقيق أهدافهم الحاسمة.
+                </p>
+                <p class="lead text-right">
+                    يعمل مع شركاء في جميع أنحاء العالم ، كما يتمتع فريق الإدارة لدينا بخبرة ممتازة تعطينا ميزة كبيرة في فهم متطلبات عمل العملاء.
+                </p>
+                <hr>
+                <div class="icons ">
+                    <ul class="col-9 col-sm-9 col-md-12">
+                        <li><a href="###"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="###"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="###"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="###"><i class="fab fa-google"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="col-12 col-sm-6 col-md-4 m-sm-auto">
+            @using (Html.BeginForm("Enter", "Admins",FormMethod.Post, new { @class = "login-form" }))
+            {
+               
+                <h3 class="mb-5 text-center">تسجيل الدخول</h3>
+                @Html.ValidationSummary(true,"برجاء اعاده ادخال البيانات صحيحه",new{@id="validationS"})
+                
+                 
+              <div class="form-group">
+                  <label for="phone" class="float-right">رقم الهاتف</label>
+                  @Html.EditorFor(m=>m.phone,new{ htmlAttributes = new{@class = "form-control"} })
+                  @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+            
+              </div>
+              <div class="form-group">
+                  <label for="Password" class="float-right">كلمه المرور</label>
+                  @Html.EditorFor(m=>m.Password,new{ htmlAttributes = new{@class = "form-control"} })
+                  @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+              </div>
+              <button type="submit" class="btn btn-primary log">الدخول</button>
+                  
+                
+            }
+        </section>
+    </section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+
+}
+

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link rel="stylesheet" href="~/Content/all.css">
+
+    </head>
+    <body>
+
+        <main class="container-fluid">
+           @RenderBody()
+        </main>
+
+
+
+
+    
+    @Scripts.Render("~/bundles/lib")
+    @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,27 @@
+﻿@model Admins.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-white text-center mt-4 mb-4">Details</h2>
+
+<div class="jumbotron jumbotron-fluid justify-content-between rounded-pill">
+    <img src="~/images/@Model.image" width="200px" height="200px" style="border-radius: 100px; margin: auto;display: block" />
+    <div class="container mt-3">
+        <p class="lead text-center "> الاسم:@Model.name</p>
+    </div>
+    <div class="container">
+        <p class="lead text-center "> العنوان:@Model.address</p>
+    </div>
+    <div class="container">
+        <p class="lead text-center "> رقم الهاتف:@Model.phone+02</p>
+    </div>
+    <div class="container">
+        <p class="lead text-center "> الوظيفة:@Model.title</p>
+    </div>
+    <div class="container ">
+        <p class="lead text-center">القسم:@ViewData["dep"]</p>
+    </div>
+</div>
